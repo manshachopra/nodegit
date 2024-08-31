@@ -19,7 +19,7 @@ seeder.addUser()
  const CustomerRoutes=require('./routes/UserRoutes')
 app.use('/customer',CustomerRoutes)
 
-app.listen(9000) 
+app.listen(8080) 
 
 
 module.exports=router

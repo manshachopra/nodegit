@@ -19,8 +19,9 @@ seeder.addUser()
  const CustomerRoutes=require('./routes/UserRoutes')
 app.use('/customer',CustomerRoutes)
 
-app.listen(8080) 
+app.listen(8080,'0.0.0.0',function(){
+    console.log('We b Runnin 80808')
+}) 
 
 
 module.exports=router
-console.log('server running 8080')

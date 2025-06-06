@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    environment {
+        NODE_ENV = 'development'
+    }
+
+    tools {
+        nodejs 'NodeJS'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/manshachopra/nodegit.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
+        stage('Start Server') {
+            steps {
+                bat 'node index.js'
+            }
+        }
+    }
+        post {
+        success {
+            echo "Build Succeeded: Pipeline complete."
+        }
+        failure {
+            echo "Build Failed: check errors"
+        }
+    }
+}
+
+
+
